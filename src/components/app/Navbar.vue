@@ -1,5 +1,5 @@
 <template>
-    <nav>
+    <nav class="nav">
       Навбар
     </nav>
 </template>
@@ -11,3 +11,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.nav {
+  width: 100%;
+  height: 66px;
+  @include white;
+}
+
+</style>

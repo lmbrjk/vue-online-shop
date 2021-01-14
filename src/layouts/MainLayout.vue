@@ -1,15 +1,13 @@
 <template>
 
-  <div>
+  <div class="main-layout__wrapper">
     
     <Navbar />
 
     <Sidebar />    
 
-    <main>
-      <div>
-          <router-view />
-      </div>
+    <main>      
+      <router-view />      
     </main>
     
   </div>

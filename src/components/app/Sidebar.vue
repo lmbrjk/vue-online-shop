@@ -28,3 +28,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  h2 {
+    color: $green-color;
+  }
+</style>>

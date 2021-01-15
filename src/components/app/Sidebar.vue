@@ -7,8 +7,10 @@
         :key="link.url"
         tag="li"        
         v-bind:to="link.url"
+
+        class="sidebar__item"
       >
-        <a>{{ link.title }}</a>
+        {{ link.title }}
       </router-link>
     </ul>
   </div>
@@ -31,6 +33,30 @@ export default {
 
 <style lang="scss">
 .sidebar {
-  flex: 1 1 auto;
+  padding-left: 88px;
+  //padding-right: 44px;
+  flex: 1 1 20%;
+
+  &__title, &__item {
+    line-height: $line-height-41;
+    text-align: $sidebar-text-align;
+  }
+  
+  &__title {
+    
+  }
+
+  &__item {
+    text-decoration: underline;
+
+    &:hover {
+      color: #59606D;
+      text-decoration: none;
+    }
+    &:visited {
+      color: #959DAD;
+      text-decoration: none;
+    }
+  }
 }
-</style>>
+</style>

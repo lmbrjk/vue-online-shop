@@ -24,7 +24,7 @@ export default {
     data(){
         return {
             products: [],
-            category: 1,
+            category: 2,
             loading: true
         }
     }    

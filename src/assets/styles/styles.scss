@@ -37,51 +37,82 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
 }
 
-.main-layout__wrapper {
-    max-width: 1440px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
+.loader {
+    @include fl-center;
 }
 
 .products {
     &__wrapper {
-        padding: 5px;
-        display: flex;
-        justify-content: space-around;
+        @include fl-center;
+        justify-content: space-between;
         flex-wrap: wrap;
     }
 
     &__item {
-        margin: 15px;
-        flex: 1 1 265px;
+        margin: 10px;
+        padding: 20px;
+        flex: 1 1 24%;
+        max-width: 264px;
+        @include fl-center;
+        flex-wrap: wrap;
         @include white;
         border-radius: 8px;
 
         .row {
-            display: flex;
-            justify-content: space-between;
+            width: 100%;
+            @include fl-center;
+            justify-content: space-between;            
 
+            .rating {
 
-            .img {
-                width: 12px;
-                height: 7.5px;
+                @include fl-center;
+                
+                &__image {
+                    width: 20px;
+                    height: 20px;
+                }
+                &__number {
+                    font-weight: 700;
+                    font-size: 13px;
+                    color: #F2C94C;
+                }
+
+            }
+
+            .cart {             
+                @include fl-center;                
+            }
+
+        }       
+
+        .img {
+
+            &__wrapper {
+                width: 100%;
+            }
+            &__image {
+                width: 200px;
+                height: auto;
             }
         }
 
         .title, .price {
+            @include fl-center;
+            justify-content: flex-start;
+            width: 100%;
             font-size: 14px;
             line-height: 18px;
+        }
+
+        .title {
+            text-transform: capitalize;
+            color: $color-text-grey;
         }
     
         .price {
             font-weight: bold;
         }
-
-        .img {
-            width: 200px;
-            height: auto;
-        }
+        
     }    
     
 }

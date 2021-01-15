@@ -2,8 +2,8 @@
     <div class="products__wrapper">
         <Loader v-if="loading" />
 
-        <Product 
-            v-else
+        <Product
+            v-else 
             v-for="product of products"
             v-bind:key="product.id"
 
@@ -24,7 +24,7 @@ export default {
     data(){
         return {
             products: [],
-            category: 1,
+            category: 3,
             loading: true
         }
     }    

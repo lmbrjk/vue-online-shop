@@ -23,8 +23,8 @@ export default {
     return {
       links: [
         {title: "Рюкзаки", url: "/backpacks"},
-        {title: "Футболки", url: "/t-shirts"},
-        {title: "Рубашки", url: "/shirts"}
+        {title: "Портфели", url: "/briefcases"},
+        {title: "Сумки", url: "/bags"}
       ]
     }
   }
@@ -34,24 +34,20 @@ export default {
 <style lang="scss">
 .sidebar {
   padding-left: 88px;
-  //padding-right: 44px;
   flex: 1 1 20%;
 
   &__title, &__item {
     line-height: $line-height-41;
     text-align: $sidebar-text-align;
   }
-  
-  &__title {
-    
-  }
 
   &__item {
     text-decoration: underline;
 
     &:hover {
-      color: #59606D;
+      color: $color-text-grey;
       text-decoration: none;
+      cursor: pointer;
     }
     &:visited {
       color: #959DAD;

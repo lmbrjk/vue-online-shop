@@ -20,14 +20,14 @@ const routes = [
     component: () => import('../views/Backpacks.vue')
   },
   {
-    path: '/shirts',
-    name: 'Shirts',
-    component: () => import('../views/Shirts.vue')
+    path: '/briefcases',
+    name: 'Briefcases',
+    component: () => import('../views/Briefcases.vue')
   },
   {
-    path: '/t-shirts',
-    name: 'T-shirts',
-    component: () => import('../views/T-shirts.vue')
+    path: '/bags',
+    name: 'Bags',
+    component: () => import('../views/Bags.vue')
   }
 ]
 

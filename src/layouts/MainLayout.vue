@@ -2,7 +2,14 @@
 
   <div class="main-layout__wrapper">
     
-    <Header />
+    <Cart 
+      v-model="isShow"
+      @switch-cart="isShow = !isShow"
+    />
+
+    <Header 
+      @switch-cart="isShow = !isShow"
+    />
     
     <div class="container">
       <Sidebar />
@@ -23,16 +30,19 @@
 </template>
 
 <script>
+import Cart from '@/components/app/Cart.vue'
 import Header from '@/components/app/Header.vue'
 import Sidebar from '@/components/app/Sidebar.vue'
 
 export default {
   name: 'main-layout',
   components: {
-    Header, Sidebar
+    Cart, Header, Sidebar
   },
   data(){
-    return {}
+    return {
+      isShow: false
+    }
   }
 }
 </script>

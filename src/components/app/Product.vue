@@ -5,7 +5,11 @@
                 <img class="rating__image" src="@/assets/images/rating.png">
                 <span class="rating__number">{{ product.rating }}</span>
             </div>
-            <div class="cart">
+            <div 
+                v-on:click="addToCart"
+                class="cart"
+            >
+
                 <img src="@/assets/images/cart.png" class="cart__image">
             </div>
         </div>
@@ -16,7 +20,7 @@
             >
         </div>
         <div class="title">
-            {{ product.name }}
+            {{ product.name | firstSymbolFilter }}
         </div>
         <div class="price">
             {{ product.price }}
@@ -25,10 +29,18 @@
 </template>
 
 <script>
+import {mapActions} from "vuex"
+
 export default {
     props: {
         product: {
             type: Object
+        }
+    },
+    methods: {
+        ...mapActions(["ADD_TO_CART"]),
+        addToCart(){
+            this.ADD_TO_CART(this.product);
         }
     }
 }

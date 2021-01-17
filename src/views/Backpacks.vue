@@ -4,7 +4,7 @@
 
         <Product 
             v-else
-            v-for="product of products"
+            v-for="product of PRODUCTS"
             v-bind:key="product.id"
 
             v-bind:product="product"
@@ -23,10 +23,9 @@ export default {
     mixins: [fetchCategoryMixin],
     data(){
         return {
-            products: [],
             category: 1,
             loading: true
         }
-    }    
+    }
 }
 </script>

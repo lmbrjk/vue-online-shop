@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import Cart from '@/components/app/Cart.vue'
+import Cart from '@/components/app/Cart/Cart.vue'
 import Header from '@/components/app/Header.vue'
 import Sidebar from '@/components/app/Sidebar.vue'
 

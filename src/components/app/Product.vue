@@ -19,11 +19,13 @@
                 class="img__image"
             >
         </div>
-        <div class="title">
-            {{ product.name | firstSymbolFilter }}
-        </div>
-        <div class="price">
-            {{ product.price }}
+        <div>
+            <div class="title">
+                {{ product.name | firstSymbolFilter }}
+            </div>
+            <div class="price">
+                {{ product.price | currencyFilter }}
+            </div>
         </div>
     </div>
 </template>

@@ -12,3 +12,10 @@
 @mixin m-b-cart-element {
     margin-bottom: 24px;
 }
+
+@mixin text-in-product {
+    text-align: left;
+    width: 100%;
+    font-size: 14px;
+    line-height: 18px;
+}

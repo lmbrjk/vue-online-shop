@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import ProductsInCart from "@/components/app/ProductsInCart.vue"
+import ProductsInCart from "@/components/app/Cart/ProductsInCart.vue"
 import {mapGetters} from "vuex"
 
 export default {
@@ -66,6 +66,7 @@ export default {
 
         position: fixed;
         height: 100%;
+        z-index: 400;
     }
 
     &__background {
@@ -81,6 +82,7 @@ export default {
         min-width: 320px;
         @include fl-center;
         flex-direction: column;
+        flex-wrap: wrap;
         @include white;
         z-index: 100;
     }

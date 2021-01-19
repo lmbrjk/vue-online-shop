@@ -50,6 +50,7 @@ export default {
         @include fl-center;
         justify-content: space-between;
         @include white;
+        margin-bottom: 12px;
         padding: 15px 25px;
         
         .image {

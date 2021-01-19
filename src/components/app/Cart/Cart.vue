@@ -28,6 +28,8 @@
             </div>
             <div 
                 v-else
+
+                class="products-in-cart__wrapper"
             >
                 <ProductsInCart />
                 <Form />
@@ -86,6 +88,7 @@ export default {
         min-width: 320px;
         @include fl-center;
         flex-direction: column;
+        align-items: stretch;
         flex-wrap: wrap;
         @include white;
         z-index: 100;
@@ -113,6 +116,12 @@ export default {
         }
     }
 }
+
+// .products-in-cart__wrapper {
+//     width: 100%;
+// }
+
+
 
 // для скрытия корзины
 .open {

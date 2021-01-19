@@ -35,10 +35,7 @@ export default {
 
 <style lang="scss">
 
-.prod-in-cart {
-
-    &, &__text, &__list{
-    width: 100%;}
+.prod-in-cart {   
     
     &__text {        
         line-height: $line-height-41;

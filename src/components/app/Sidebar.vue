@@ -8,7 +8,7 @@
         tag="li"        
         v-bind:to="link.url"
 
-        class="sidebar__item"
+        class="sidebar__item cursor"
       >
         {{ link.title }}
       </router-link>
@@ -44,15 +44,16 @@ export default {
   &__item {
     text-decoration: underline;
 
-    &:hover {
-      color: $color-text-grey;
-      text-decoration: none;
-      cursor: pointer;
-    }
     &:visited {
       color: #959DAD;
       text-decoration: none;
     }
+    
+    &:hover {
+      color: $color-text-grey;
+      text-decoration: none;
+    }
+    
   }
 }
 </style>

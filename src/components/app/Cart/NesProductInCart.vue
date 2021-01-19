@@ -19,8 +19,10 @@
             </div>
         </div>                
         <img
+            v-on:click="removeFromCart"
+
             src="@/assets/images/recycle-bin.png"
-            class="recycle-bin"
+            class="recycle-bin cursor"
         >                
     </li>
 </template>
@@ -30,6 +32,11 @@ export default {
     props: {
         product: {
             type: Object
+        }
+    },
+    methods: {
+        removeFromCart(){
+            this.$emit("removeFromCart");
         }
     }
 }
@@ -45,6 +52,11 @@ export default {
         @include white;
         padding: 15px 25px;
         
+        .image {
+            width: 70.5px;
+            height: 90px;
+        }
+
         .description,
         .recycle-bin {
             margin-left: 15px;
@@ -54,8 +66,7 @@ export default {
             flex: 1 1 auto;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
-            height: 100%;
+            justify-content: space-between;
 
             .title,
             .price {
@@ -81,11 +92,10 @@ export default {
 
             }
             
-        }
+        }       
 
-        .image {
-            width: 70.5px;
-            height: 90px;
+        .recycle-bin {
+            @include hover-invert;
         }
     }
     

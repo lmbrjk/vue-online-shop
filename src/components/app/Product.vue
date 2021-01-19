@@ -7,7 +7,7 @@
             </div>
             <div 
                 v-on:click="addToCart"
-                class="cart"
+                class="cart cursor"
             >
 
                 <img src="@/assets/images/cart.png" class="cart__image">

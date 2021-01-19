@@ -5,6 +5,8 @@
       <div class="cart">
         <a
           v-on:click="$emit('switch-cart')"
+
+          class="cursor"
         >
           <img src="@/assets/images/cart-header.png" class="cart__image">
           <div

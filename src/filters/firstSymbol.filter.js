@@ -4,7 +4,7 @@ export default function firstSymbolFilter(value){
 
     words.forEach( item => item.toLowerCase());
 
-    console.log(words);
+    //console.log(words);
     //console.log(words.join(" "));
 
    

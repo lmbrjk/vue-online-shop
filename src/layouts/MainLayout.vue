@@ -17,9 +17,9 @@
         <div class="input-select__wrapper">
           <label class="input-select__label">
             Сортировать по:
-            <select id="select">
-              <option>По цене</option>
-              <option>По популярности</option>
+            <select id="select" class="cursor">
+              <option class="cursor">По цене</option>
+              <option class="cursor">По популярности</option>
             </select>
           </label>
         </div>

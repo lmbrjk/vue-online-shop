@@ -14,8 +14,15 @@
 }
 
 @mixin text-in-product {
-    text-align: left;
+    margin-bottom: 2%;
     width: 100%;
     font-size: 14px;
     line-height: 18px;
+    text-align: left;
+}
+
+@mixin hover-invert {
+    &:hover {
+        filter: invert(100%);
+    }
 }

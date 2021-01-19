@@ -41,6 +41,10 @@ h1, h2, h3, h4, h5, h6 {
     @include fl-center;
 }
 
+.cursor {
+    cursor: pointer;
+}
+
 .products {
     &__wrapper {
         @include fl-center;
@@ -80,7 +84,9 @@ h1, h2, h3, h4, h5, h6 {
             }
 
             .cart {             
-                @include fl-center;                
+                @include fl-center; 
+                
+                @include hover-invert;
             }
 
         }       
@@ -99,9 +105,7 @@ h1, h2, h3, h4, h5, h6 {
         .title, .price {
             @include fl-center;
             justify-content: flex-start;
-            width: 100%;
-            font-size: 14px;
-            line-height: 18px;
+            @include text-in-product;
         }
 
         .title {

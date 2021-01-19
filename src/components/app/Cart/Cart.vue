@@ -9,7 +9,7 @@
                 <h1 class="title">Корзина</h1>
                 <div
                     v-on:click="$emit('switch-cart')"
-                    class="cart__close"
+                    class="cart__close cursor"
                 >
                     &#10006;
                 </div>                
@@ -21,26 +21,30 @@
                 <div class="text">Пока что вы ничего не добавили в корзину.</div>
                 <div
                     v-on:click="$emit('switch-cart')"
-                    class="button button_black"
+                    class="button button_black cursor"
                 >
                     Перейти к выбору
                 </div>
             </div>
-            <ProductsInCart 
+            <div 
                 v-else
-            />
+            >
+                <ProductsInCart />
+                <Form />
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 import ProductsInCart from "@/components/app/Cart/ProductsInCart.vue"
+import Form from "@/components/app/Cart/Form.vue"
 import {mapGetters} from "vuex"
 
 export default {
     props: ['value'],
     components: {
-        ProductsInCart
+        ProductsInCart, Form
     },
     data(){
         return {}

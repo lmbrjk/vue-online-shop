@@ -1,5 +1,7 @@
 <template>
     <form
+        v-on:submit.prevent="sendForm"
+
         class="form"
     >
         <div class="prod-in-cart__text">Оформить заказ</div>
@@ -28,7 +30,7 @@
             class="button button_black cursor"
             type="submit"
         >
-            Перейти к выбору
+            Отправить
         </button>
     </form>
 </template>
@@ -41,6 +43,49 @@ export default {
             name: "",
             phone: "",
             address: "",
+        }
+    },
+    methods: {
+        async sendForm(){
+            if(this.name == "" || this.phone == "" || this.address == ""){
+                return console.log("no");
+            }
+
+            console.log("yes");
+
+            // let sendingObj = {
+            //     sunInv: this.sumValue,
+            //     multValue: this.multValue
+            // };
+           
+            // let url = 'https://jsonplaceholder.typicode.com/posts';
+
+            // return new Promise( (resolve, reject) => {
+                
+            //     let request = new XMLHttpRequest();
+            
+            //     request.open('POST', url);
+            //     request.setRequestHeader('Content-Type', 'application/json');
+
+            //     request.onreadystatechange = function(){
+            //         if(!request.status == 200 && request.readyState == 4){
+            //             reject(this.error);
+                    
+            //         } else { 
+            //             resolve(request);
+            //         }
+            //     };
+
+            //     request.send(JSON.stringify(sendingObj));
+                
+            // })
+            // .then( (data) => {
+            //     console.log(data);
+
+            // })
+            // .catch( (error) => console.log(error));
+            
+            
         }
     }
 }

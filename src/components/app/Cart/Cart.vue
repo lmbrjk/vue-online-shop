@@ -15,7 +15,7 @@
                 </div>                
             </div>
             <div
-                v-if="!CART.length"          
+                v-if="!CART.length && !send"          
                 class="cart_empty"
             >
                 <div class="text">Пока что вы ничего не добавили в корзину.</div>
@@ -27,12 +27,21 @@
                 </div>
             </div>
             <div 
-                v-else
+                v-else-if="!send"
 
                 class="products-in-cart__wrapper"
             >
                 <ProductsInCart />
                 <Form />
+            </div>
+            <div
+                v-else
+
+                class="send-form-ok"
+            >
+                <img src="@/assets/images/ok.png">
+                <p class="send-form-ok__title">Заявка успешно отправлена</p>
+                <p class="send-form-ok__text">Вскоре наш менеджер свяжется с Вами</p>
             </div>
         </div>
     </div>
@@ -49,7 +58,9 @@ export default {
         ProductsInCart, Form
     },
     data(){
-        return {}
+        return {
+            send: false
+        }
     },
     computed: {
         ...mapGetters(["CART"])
@@ -92,11 +103,14 @@ export default {
         flex-wrap: wrap;
         @include white;
         z-index: 100;
+        overflow: auto;
     }
 
     &__row {
+        flex: 1 1 auto;
         @include fl-center;
         justify-content: space-between;
+        max-height: 41px;
         @include m-b-cart-element;
 
         .title {
@@ -106,6 +120,7 @@ export default {
     }    
 
     &_empty {
+        flex: 1 2 auto;
         font-size: 22px;
         line-height: 28px;
         text-align: left;
@@ -117,12 +132,23 @@ export default {
     }
 }
 
-// .products-in-cart__wrapper {
-//     width: 100%;
-// }
+.send-form-ok {
+    flex: 1 2 auto;
+    @include fl-center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    &__title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 31px;
+    }
 
-
-
+    &__text {
+        font-size: 16px;
+        line-height: 21px;
+    }
+}
 // для скрытия корзины
 .open {
     display: flex;

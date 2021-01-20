@@ -121,7 +121,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .button_black {
-    width: 364px;
+    width: 100%;
     height: 50px;
     @include fl-center;
     justify-content: center;
@@ -131,6 +131,10 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
     background: #1F1F1F;
     border-radius: 8px;
+
+    &:hover {
+        background: $color-text-grey;
+    }
 }
 
 

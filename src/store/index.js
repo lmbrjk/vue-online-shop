@@ -13,7 +13,10 @@ export default new Vuex.Store({
     setError(state, error){
       state.error = error;
     }
-  },  
+  },
+  getters: {
+    error: s => s.error
+  },
   modules: {
     products, cart
   }

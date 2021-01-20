@@ -8,7 +8,10 @@ export default {
         },
         DELETE_PRODUCT(state, product){
             state.cart.splice(product, 1)
-        }
+        },
+        CLEAR_CART(state){
+            state.cart = [];
+        } 
     },
     actions: {
         ADD_TO_CART({commit}, product){

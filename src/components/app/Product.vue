@@ -19,7 +19,7 @@
                 class="img__image"
             >
         </div>
-        <div>
+        <div class="description">
             <div class="title">
                 {{ product.name | firstSymbolFilter }}
             </div>

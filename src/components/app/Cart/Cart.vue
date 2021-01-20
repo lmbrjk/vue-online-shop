@@ -8,7 +8,7 @@
             <div class="cart__row">
                 <h1 class="title">Корзина</h1>
                 <div
-                    v-on:click="$emit('switch-cart')"
+                    v-on:click="closeCart"
                     class="cart__close cursor"
                 >
                     &#10006;
@@ -32,7 +32,9 @@
                 class="products-in-cart__wrapper"
             >
                 <ProductsInCart />
-                <Form />
+                <Form 
+                    v-on:send="send = true"
+                />
             </div>
             <div
                 v-else
@@ -64,7 +66,16 @@ export default {
     },
     computed: {
         ...mapGetters(["CART"])
-    }    
+    },
+    methods: {
+        closeCart(){
+            this.$emit('switch-cart');
+            
+            if(this.send){
+                this.send = false;
+            }
+        }
+    }  
 }
 </script>
 
@@ -100,7 +111,6 @@ export default {
         @include fl-center;
         flex-direction: column;
         align-items: stretch;
-        flex-wrap: wrap;
         @include white;
         z-index: 100;
         overflow: auto;
@@ -136,6 +146,7 @@ export default {
     flex: 1 2 auto;
     @include fl-center;
     justify-content: center;
+    align-content: center;
     flex-wrap: wrap;
     
     &__title {

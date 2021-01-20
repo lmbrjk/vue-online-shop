@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import {mapGetters, mapMutations} from "vuex"
 
 export default {
     data(){
@@ -43,49 +44,53 @@ export default {
             name: "",
             phone: "",
             address: "",
+            products: []
         }
+    },
+    computed: {
+        ...mapGetters(["CART"]),
+        ...mapMutations(["CLEAR_CART"]),
     },
     methods: {
         async sendForm(){
+            
             if(this.name == "" || this.phone == "" || this.address == ""){
                 return console.log("no");
             }
 
-            console.log("yes");
+            this.CART.forEach( item => {
+                let i = item.id;
+                this.products.push(i);
+            });
 
-            // let sendingObj = {
-            //     sunInv: this.sumValue,
-            //     multValue: this.multValue
-            // };
-           
-            // let url = 'https://jsonplaceholder.typicode.com/posts';
+            let sendingObj = {
+                name: this.name,
+                phone: this.phone,
+                address: this.address,
+                products: this.products
+            };
 
-            // return new Promise( (resolve, reject) => {
+            try {
+                let url = 'https://jsonplaceholder.typicode.com/posts';
                 
-            //     let request = new XMLHttpRequest();
-            
-            //     request.open('POST', url);
-            //     request.setRequestHeader('Content-Type', 'application/json');
+                await fetch(url, {
+                    method: 'POST', 
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    redirect: 'follow',
+                    referrer: 'no-referrer',
+                    body: JSON.stringify(sendingObj)
+                });
 
-            //     request.onreadystatechange = function(){
-            //         if(!request.status == 200 && request.readyState == 4){
-            //             reject(this.error);
-                    
-            //         } else { 
-            //             resolve(request);
-            //         }
-            //     };
+            } catch(e){
+                console.log(e)
+            } 
 
-            //     request.send(JSON.stringify(sendingObj));
-                
-            // })
-            // .then( (data) => {
-            //     console.log(data);
+            this.CLEAR_CART;
+            
+            this.$emit("send");
 
-            // })
-            // .catch( (error) => console.log(error));
-            
-            
         }
     }
 }

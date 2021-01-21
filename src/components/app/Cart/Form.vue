@@ -14,6 +14,7 @@
         />
         <input
             v-model="phone"
+            v-phone
 
             class="form__input"
             type="tel"
@@ -32,6 +33,12 @@
         >
             Отправить
         </button>
+        <div 
+            v-if="error"
+            class="error"
+        >
+            Все поля обязательны к заполнению
+        </div>
     </form>
 </template>
 
@@ -44,7 +51,8 @@ export default {
             name: "",
             phone: "",
             address: "",
-            products: []
+            products: [],
+            error: false
         }
     },
     computed: {
@@ -55,7 +63,7 @@ export default {
         async sendForm(){
             
             if(this.name == "" || this.phone == "" || this.address == ""){
-                return console.log("no");
+                return this.error = true;
             }
 
             this.CART.forEach( item => {
@@ -107,6 +115,15 @@ export default {
         border: none;
         background: #F8F8F8;
         border-radius: 8px;
+    }
+
+    .error {
+        margin-top: 16px;
+        color: red;
+    }
+    
+    .input_error {
+        border: 1px solid red;
     }
 }
 </style>

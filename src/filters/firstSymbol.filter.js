@@ -1,13 +1,22 @@
 export default function firstSymbolFilter(value){
     
-    const words = value.split(" ");
+    let words = value.split(" ");
 
-    words.forEach( item => item.toLowerCase());
+    const lowerWords = words.map( item => item.toLowerCase());
 
-    //console.log(words);
-    //console.log(words.join(" "));
+    words = lowerWords.map(word => {
 
-   
-        
+            let letters = word.split("");
+            let firstLet = letters[0].toUpperCase();
+            letters[0] = firstLet;
+            
+            word = letters.join("");
+            
+            return word;            
+        }
+    );
+
+    value = words.join(" ")
+       
     return value; 
 }

@@ -17,13 +17,26 @@
         <div class="input-select__wrapper">
           <label class="input-select__label">
             Сортировать по:
-            <select id="select" class="cursor">
-              <option class="cursor">По цене</option>
-              <option class="cursor">По популярности</option>
+            <select 
+              v-model="sorting"
+              id="select" class="cursor"
+            >
+              <option 
+                value="forPrice"
+
+                class="cursor"
+              >По цене</option>
+              <option 
+                value="forRating"
+
+                class="cursor"
+              >По популярности</option>
             </select>
           </label>
         </div>
-        <router-view />      
+        <router-view 
+          v-bind:sorting="sorting"
+        />      
       </main>
     </div>
   </div>
@@ -41,6 +54,7 @@ export default {
   },
   data(){
     return {
+      sorting: "",
       isShow: false
     }
   }

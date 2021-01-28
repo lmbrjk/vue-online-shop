@@ -22,6 +22,18 @@ export default {
       } 
     },
     getters: {
-      PRODUCTS: s => s.products
+      PRODUCTS: s => s.products,
+      // сортировка товаров по цене (по возрастанию)
+      PRODUCTS_BY_PRICE: function(s){
+        s.products.sort(function(a, b){
+          return a.price - b.price;
+        })
+      },
+      // сортировка товаров по рейтингу (по возрастанию)
+      PRODUCTS_BY_RATING: function(s){
+        s.products.sort(function(a, b){
+          return a.rating - b.rating;
+        })
+      }
     }
 }

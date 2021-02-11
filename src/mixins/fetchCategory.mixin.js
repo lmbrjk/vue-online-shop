@@ -24,6 +24,13 @@ export default {
         // вывода товаров определенной категории
         await this.GET_PRODUCTS(this.category);
 
+        if(this.sorting == "forPrice"){
+            this.PRODUCTS_BY_PRICE
+        }
+        else if(this.sorting == "forRating"){
+            this.PRODUCTS_BY_RATING
+        }
+        
         // this.loading - отключаем лоадер при начале загрузки товаров
         this.loading = false;
     }

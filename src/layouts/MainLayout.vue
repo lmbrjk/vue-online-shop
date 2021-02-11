@@ -43,9 +43,9 @@
 </template>
 
 <script>
-import Cart from '@/components/app/Cart/Cart.vue'
-import Header from '@/components/app/Header.vue'
-import Sidebar from '@/components/app/Sidebar.vue'
+import Cart from "@/components/app/Cart/Cart.vue"
+import Header from "@/components/app/Header.vue"
+import Sidebar from "@/components/app/Sidebar.vue"
 
 export default {
   name: 'main-layout',
@@ -57,6 +57,9 @@ export default {
       sorting: "",
       isShow: false
     }
+  },
+  mounted(){
+    this.$store.dispatch("CHECK_LOCALSTORAGE")
   }
 }
 </script>

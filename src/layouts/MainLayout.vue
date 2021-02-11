@@ -65,7 +65,13 @@ export default {
 </script>
 
 <style lang="scss">
+.main-layout__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
+  flex-grow: 1;
   max-width: 1440px;
   margin: 0 auto;
   padding-top: 44px;
